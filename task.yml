@@ -1,0 +1,8 @@
+--- #this is a test
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install HTTPD on centos
+      action: yum name=httpd state=present

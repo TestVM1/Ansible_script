@@ -1,0 +1,13 @@
+--- # my new playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name : install httpd server pn linux
+      action: yum name=httpd state=present
+      notify: restart httpd
+  handlers:
+    - name: restart httpd
+      action: service name=httpd state=restarted
+

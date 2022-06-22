@@ -1,0 +1,10 @@
+--- #my playbook
+- hosts: demo
+    user: ansible
+    become: yes
+    connection: ssh
+    vars:
+    pkgname:
+    task:
+    - name: install HTTPD server on centos
+      action: yum name='{{pkgname}}' state=apsent
